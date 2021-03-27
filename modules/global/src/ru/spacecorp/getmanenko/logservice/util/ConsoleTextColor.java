@@ -8,37 +8,37 @@ public enum ConsoleTextColor {
     BLACK(CustomColor.ANSI_BLACK),
 
     /**
-     * RED to black colored text for console
+     * RED to red colored text for console
      */
     RED(CustomColor.ANSI_RED),
 
     /**
-     * GREEN to black colored text for console
+     * GREEN to green colored text for console
      */
     GREEN(CustomColor.ANSI_GREEN),
 
     /**
-     * YELLOW to black colored text for console
+     * YELLOW to yellow colored text for console
      */
     YELLOW(CustomColor.ANSI_YELLOW),
 
     /**
-     * BLUE to black colored text for console
+     * BLUE to blue colored text for console
      */
     BLUE(CustomColor.ANSI_BLUE),
 
     /**
-     * PURPLE to black colored text for console
+     * PURPLE to purple colored text for console
      */
     PURPLE(CustomColor.ANSI_PURPLE),
 
     /**
-     * CYAN to black colored text for console
+     * CYAN to cyan colored text for console
      */
     CYAN(CustomColor.ANSI_CYAN),
 
     /**
-     * WHITE to black colored text for console
+     * WHITE to white colored text for console
      */
     WHITE(CustomColor.ANSI_WHITE),
 
