@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<app-component xmlns="http://schemas.haulmont.com/cuba/app-component.xsd"
+               dependsOn="com.haulmont.cuba">
+
+    <module name="global" blocks="*">
+        <artifact name="logservice-global" appJar="true"/>
+
+        <property name="cuba.persistenceConfig" value="+ru/spacecorp/getmanenko/logservice/persistence.xml"/>
+        <property name="cuba.metadataConfig" value="+ru/spacecorp/getmanenko/logservice/metadata.xml"/>
+        <property name="cuba.viewsConfig" value="+ru/spacecorp/getmanenko/logservice/views.xml"/>
+    </module>
+    <module name="core" dependsOn="global" blocks="core">
+        <artifact name="logservice-core" appJar="true"/>
+
+        <property name="cuba.springContextConfig" value="+ru/spacecorp/getmanenko/logservice/spring.xml"/>
+        <property name="cuba.mainMessagePack" value="+ru.spacecorp.getmanenko.logservice.core"/>
+    </module>
+    <module name="web" dependsOn="gui" blocks="web">
+        <artifact name="logservice-web" appJar="true"/>
+        <artifact name="logservice-web" classifier="web" ext="zip" configuration="webcontent"/>
+
+        <property name="cuba.springContextConfig" value="+ru/spacecorp/getmanenko/logservice/web-spring.xml"/>
+        <property name="cuba.dispatcherSpringContextConfig"
+                  value="+ru/spacecorp/getmanenko/logservice/web-dispatcher-spring.xml"/>
+        <property name="cuba.windowConfig" value="+ru/spacecorp/getmanenko/logservice/web-screens.xml"/>
+        <property name="cuba.menuConfig" value="+ru/spacecorp/getmanenko/logservice/web-menu.xml"/>
+        <property name="cuba.permissionConfig" value="+ru/spacecorp/getmanenko/logservice/web-permissions.xml"/>
+        <property name="cuba.mainMessagePack" value="+ru.spacecorp.getmanenko.logservice.web"/>
+    </module>
+    <module name="gui" dependsOn="global" blocks="web,desktop">
+        <artifact name="logservice-gui" appJar="true"/>
+    </module>
+</app-component>
